@@ -25,8 +25,13 @@ console.log(`£${pounds}.${pence}`);
 
 // To begin, we can start with
 // 1. const penceString = "399p": initializes a string variable with the value "399p"
-// 2. const penceStringWithoutTrailingP = penceString.substring(0, penceString.length - 1): removes the trailing "p" from the string, resulting in "399"
-// 3. const paddedPenceNumberString = penceStringWithoutTrailingP.padStart(3, "0"): pads the string with leading zeros to ensure it has at least 3 characters, resulting in "399"
-// 4. const pounds = paddedPenceNumberString.substring(0, paddedPenceNumberString.length - 2): extracts the pounds part of the string by taking all but the last two characters, resulting in "3"
-// 5. const pence = paddedPenceNumberString.substring(paddedPenceNumberString.length - 2).padEnd(2, "0"): extracts the pence part of the string by taking the last two characters and pads it with trailing zeros if necessary, resulting in "99"
-// 6. console.log(`£${pounds}.${pence}`): outputs the final formatted price in pounds and pence, resulting in "£3.99"
+//const penceStringWithoutTrailingP = penceString.substring(0, penceString.length - 1): removes the trailing ‘p’ from the string        const penceStringWithoutTrailingP = penceString.substring(          0,          penceString.length - 1        );
+// //Removes the trailing ‘p’ character from the string to isolate the numeric value representing the amount in pence.
+// // 2. const paddedPenceNumberString = penceStringWithoutTrailingP.padStart(3, “0"): ensures the string has at least 3 characters by padding with leading zeros if necessary        const paddedPenceNumberString = penceStringWithoutTrailingP.padStart(3, “0”); 
+ // 3. Ensures that the numeric string has at least three characters by adding leading zeros if necessary. This is important for correctly separating pounds and pence later on.
+// 4. const pounds = paddedPenceNumberString.substring(0, paddedPenceNumberString.length - 2): extracts the pounds part of the string        const pounds = paddedPenceNumberString.substring(          0,          paddedPenceNumberString.length - 2        ); 
+ //Extracts the pounds portion of the string by taking all characters except the last two, which represent the pence.
+ // 5. const pence = paddedPenceNumberString.substring(paddedPenceNumberString.length - 2).padEnd(2, “0"): extracts the pence part and ensures it has two digits        const pence = paddedPenceNumberString          .substring(paddedPenceNumberString.length - 2)          .padEnd(2, “0”);
+//Extracts the last two characters of the string to represent the pence portion. It also ensures that this portion has exactly two digits by padding with trailing zeros if necessary.
+// 6. console.log(£${pounds}.${pence}): outputs the final formatted price in pounds and pence        console.log(£${pounds}.${pence}); 
+ //Outputs the final formatted price in pounds and pence to the console, using the £ symbol followed by the pounds and pence separated by a decimal point.
