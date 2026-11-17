@@ -1,5 +1,4 @@
-// Predict and explain first...
-
+// Predict and explain first... because the function multiply does not return a value.
 // =============> write your prediction here
 
 function multiply(a, b) {
@@ -8,7 +7,12 @@ function multiply(a, b) {
 
 console.log(`The result of multiplying 10 and 32 is ${multiply(10, 32)}`);
 
-// =============> write your explanation here
+// =============> write your explanation here the way to solve this problem is to return the value of a * b instead of console.log(a * b) in the function multiply.
 
 // Finally, correct the code to fix the problem
 //  =============> write your new code here
+function multiply(a, b) {
+ return a * b;
+}
+
+console.log(`The result of multiplying 10 and 32 is ${multiply(10, 32)}`);

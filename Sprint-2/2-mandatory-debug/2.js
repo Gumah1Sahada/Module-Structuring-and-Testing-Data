@@ -1,6 +1,6 @@
-// Predict and explain first...
+// Predict and explain first...the prediction is that the code will throw an error because the function getLastDigit does not take any parameters.
 
-// Predict the output of the following code:
+// Predict the output of the following code:is going to print the last digit of the number 103 which is 3. 
 // =============> Write your prediction here
 
 const num = 103;
@@ -22,3 +22,10 @@ console.log(`The last digit of 806 is ${getLastDigit(806)}`);
 
 // This program should tell the user the last digit of each number.
 // Explain why getLastDigit is not working properly - correct the problem
+ function getLastDigit(num) {
+  return num.toString().slice(-1);
+}
+
+console.log(`The last digit of 42 is ${getLastDigit(42)}`);
+console.log(`The last digit of 105 is ${getLastDigit(105)}`);
+console.log(`The last digit of 806 is ${getLastDigit(806)}`);
