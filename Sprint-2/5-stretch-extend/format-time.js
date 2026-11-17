@@ -23,3 +23,60 @@ console.assert(
   currentOutput2 === targetOutput2,
   `current output: ${currentOutput2}, target output: ${targetOutput2}`
 );
+
+
+function formatAs12HourClock(time) {
+  const hours = Number(time.slice(0, 2));
+  const minutes = time.slice(3, 5);
+
+  if (hours === 0) {
+    return `12:${minutes} am`;
+  }
+
+  if (hours === 12) {
+    return `12:${minutes} pm`;
+  }
+
+  if (hours > 12) {
+    return `${hours - 12}:${minutes} pm`;
+  }
+
+  return `${time} am`;
+}
+
+console.assert(
+  formatAs12HourClock("08:00") === "08:00 am",
+  "Test 1 failed"
+);
+
+console.assert(
+  formatAs12HourClock("23:00") === "11:00 pm",
+  "Test 2 failed"
+);
+
+console.assert(
+  formatAs12HourClock("18:30") === "6:30 pm",
+  "Test 3 failed"
+);
+
+console.assert(
+  formatAs12HourClock("12:00") === "12:00 pm",
+  "Test 4 failed"
+);
+
+console.assert(
+  formatAs12HourClock("00:00") === "12:00 am",
+  "Test 5 failed"
+);
+
+console.assert(
+  formatAs12HourClock("13:45") === "1:45 pm",
+  "Test 6 failed"
+);
+
+console.assert(
+  formatAs12HourClock("09:30") === "09:30 am",
+  "Test 7 failed"
+);
+
+console.log("Finished testing!");
